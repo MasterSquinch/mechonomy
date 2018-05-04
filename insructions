@@ -1,0 +1,44 @@
+Develop four robots to perform work in today's economy.
+
+All robots have a battery capacity percent, a software version, and an age.  All robots have the ability to charge() themselves, which sets their battery percent to 100, and have the ability to upgrade(), which increases their software version by 1 and their age by 1.  Finally, all robots have a work() method, which does something different based on the type of robot.
+
+Miner robot
+
+    Has a drill arm
+        Arm has a drill() method that returns some amount of ore
+    Has an ore scanner
+        Scanner has a scan() method that returns the amount of nearby ore
+    Has an ore container
+        Has total capacity, and a current amount of ore.  Has a method empty() that sets the current amount of ore to zero, and an addOre() method that takes in an amount of ore and adds it to the container's amount.
+    Its work() method uses the drill arm to get some ore and place it in the container.  If the container is full, it should empty() it
+
+Researcher robot
+
+    Has a science module
+        Has a research() method that returns a sciency string
+    Has a paper printer
+        Has a writePaper() method that really should return a sciency string, but instead the robot plays a video game
+    Has a grad student control sprocket
+        Has a motivateGradStudent() method that threatens to remove the student's funding if they don't do the robot's work
+    Its work() method probably does nothing, but it might rarely call the research() method in its science module.
+
+Construction robot
+
+    Has a crane
+        Has a maximum load capacity
+    Has a hammer Arm
+        Has a hammer() method that returns the string "Can't touch this"
+    Has a SawZawTM
+        Has no methods, as the robot is afraid to use this scary looking tool
+    Its work() method produces some number of grunts, bangs, and calls to its Hammer arm's hammer() method
+
+Taxi robot
+
+    Has a Car
+        Has mileage, gasTankCapacity, and model name
+    Has a Navigation system
+        Has a navigateTo() method, which takes in a string and returns a string which is contains a bunch of random  "Turn left", "Turn right", "Go straight"
+    Has an AttitStringude Circuit
+        Has an aggression amount
+        Has a communicate() method that returns a string containing a greeting to the user.  The higher the aggression the more rude the greeting is.  Every time this method is called the aggression is increased by 1
+    Its work() method gets a navigation string from its navigation system, then goes in an infinite loop calling the communicate() method in its attitude circuit.
